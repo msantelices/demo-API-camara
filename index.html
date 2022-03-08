@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camara</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <div id="loader" class="loader show">
+            <div class="lds-dual-ring"></div>
+        </div>
+        <div id="camera-container" class="container camera show">
+            <div class="video-container">
+                <video id="video"></video>
+                <div id="capture-overlay" class="capture-overlay"></div>
+            </div>
+            <div class="buttons">
+                <button id="switch">Cambiar camara</button>
+                <button id="capture">Tomar foto</button>
+            </div>
+        </div>
+        <div id="result-container" class="container result">
+            <canvas id="canvas"></canvas>
+            <div class="buttons">
+                <button id="go-back">Volver</button>
+            </div>
+        </div>
+        <div id="error-container" class="error-container">
+            <h3>Error accediendo a la cámara</h3>
+        </div>
+    </main>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

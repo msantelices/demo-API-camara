@@ -1,0 +1,102 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    max-width: 640px;
+    margin: 3rem auto;
+}
+
+.video-container {
+    position: relative;
+}
+
+.container .buttons {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+}
+
+.container .buttons button {
+    width: 120px;
+    padding: 0.25rem;
+    cursor: pointer;
+    margin: 0 0.25rem;
+}
+
+video {
+    width: 100%;
+}
+
+.capture-overlay {
+    background: #ccc;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    visibility: visible;
+    opacity: 0;
+    transition: all 0.1s ease;
+}
+
+.capture-overlay.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.error-container {
+    margin: 6rem auto;
+    display: none;
+    justify-content: center;
+}
+
+/* Loader */
+.loader {
+    background: #fff;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    position: fixed;
+    z-index: 1;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.lds-dual-ring {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+}
+
+.lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid #fff;
+    border-color: rgb(54, 11, 211) transparent rgb(54, 11, 211) transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+}
+
+@keyframes lds-dual-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+}
+
+.show {
+    display: flex;
+}
