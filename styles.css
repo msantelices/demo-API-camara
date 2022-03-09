@@ -4,6 +4,21 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.nav-link {
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+}
+
 .container {
     display: none;
     flex-direction: column;
@@ -99,4 +114,28 @@ video {
 
 .show {
     display: flex;
+}
+
+.image-list {
+    text-align: center;
+    margin: 4rem auto;
+}
+
+
+table {
+    width: 80%;
+    max-width: 800px;
+    text-align: center;
+    margin: 3rem auto;
+}
+
+table th,
+table td {
+    border-bottom: 1px solid #ccc;
+    padding: 0.5rem;
+}
+
+table button {
+    cursor: pointer;
+    padding: 0.125rem 1rem;
 }

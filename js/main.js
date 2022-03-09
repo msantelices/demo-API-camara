@@ -1,4 +1,5 @@
-import { initCamera, switchCamera, capture, toggleViews } from "./camera.js"
+import { initCamera, switchCamera, capture, uploadToStorage, toggleViews } from "./camera.js"
+
 
 (()=> {
     initCamera()
@@ -11,5 +12,8 @@ import { initCamera, switchCamera, capture, toggleViews } from "./camera.js"
 
     const goBackBtn = document.getElementById('go-back')
     goBackBtn.addEventListener('click', ()=> toggleViews())
+
+    const saveImg = document.getElementById('save-img')
+    saveImg.addEventListener('click', ()=> uploadToStorage() )
 
 })()

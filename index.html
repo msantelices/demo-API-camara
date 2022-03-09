@@ -13,9 +13,13 @@
         <div id="loader" class="loader show">
             <div class="lds-dual-ring"></div>
         </div>
+
+        <a href="images.html" class="nav-link">Listado de imagenes →</a>
+
         <div id="camera-container" class="container camera show">
             <div class="video-container">
-                <video id="video"></video>
+                <!-- Elemento video importante -->
+                <video id="video"></video> 
                 <div id="capture-overlay" class="capture-overlay"></div>
             </div>
             <div class="buttons">
@@ -23,12 +27,16 @@
                 <button id="capture">Tomar foto</button>
             </div>
         </div>
+
         <div id="result-container" class="container result">
+            <!-- Canvas importante -->
             <canvas id="canvas"></canvas>
             <div class="buttons">
                 <button id="go-back">Volver</button>
+                <button id="save-img">Guadar</button>
             </div>
         </div>
+
         <div id="error-container" class="error-container">
             <h3>Error accediendo a la cámara</h3>
         </div>

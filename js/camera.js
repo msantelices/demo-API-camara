@@ -1,3 +1,5 @@
+import { uploadFile } from "../firebase/main.js"
+
 const camera = {
     allowed: true, // Indica si se autorizó a acceder a la camara  o no
     active: false, // Indica si la camara esta encendida o no
@@ -104,9 +106,10 @@ export const capture = ()=> {
         // Seleccionamos el video y el canvas donde replicaremos el frame capturado
         const video = document.getElementById('video')
         const canvas = document.getElementById('canvas')
-        const ctx = canvas.getContext('2d')
+        const ctx = canvas.getContext('2d') // ctx (context) permite manipular el canvas
         
         // Ajustamos el tamaño del canvas para que coincida con el del video
+        // Canvas obligatoriamente necesita ancho y alto
         canvas.width = video.clientWidth
         canvas.height = video.clientHeight
 
@@ -115,12 +118,22 @@ export const capture = ()=> {
 
         // Guardamos la data de la imagen capturada para uso posterior
         camera.dataURL = canvas.toDataURL()
+        console.log(camera.dataURL)
 
         // Cambiamos de vista
         toggleViews()
     }, 150)
 
     
+}
+
+// Guardar foto en Storage
+export const uploadToStorage = ()=> {
+    // Es un valor unico
+    let timestamp = Date.now()
+    let fileName = `img_${timestamp}.png`
+
+    uploadFile(camera.dataURL, fileName)
 }
 
 // Función para alternar entre las vistas
